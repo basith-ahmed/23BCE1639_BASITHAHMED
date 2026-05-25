@@ -1,0 +1,100 @@
+db.createCollection("Student")
+{ ok: 1 }
+
+show collections
+Student
+
+db.Student.drop()
+true
+
+show collections
+
+db.createCollection("Employee")
+{ ok: 1 }
+
+db.Employee.insert({
+    name: 'Elon',
+    department: 'CSE'
+})
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1458b6a12129141fa70676')
+  }
+}
+
+db.Employee.insert({
+    name: 'Mark',
+    marks: '95',
+    location: 'Pune'
+})
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a1458f4a12129141fa70677')
+  }
+}
+
+db.Employee.find
+[Function: find] AsyncFunction {
+  returnsPromise: true,
+  apiVersions: [ 1, Infinity ],
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Standalone', 'Sharded', 'LoadBalanced' ],
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  newShellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+
+db.Employee.find()
+{
+  _id: ObjectId('6a1458b6a12129141fa70676'),
+  name: 'Elon',
+  department: 'CSE'
+}
+
+{
+  _id: ObjectId('6a1458f4a12129141fa70677'),
+  name: 'Mark',
+  marks: '95',
+  location: 'Pune'
+}
+
+show collections
+Employee
+
+db.Employee.drop()
+true
+
+show collections
+
+db.createCollection("Employee")
+{ ok: 1 }
+
+db.Employee.insert({
+    name: 'Mark',
+    marks: '95',
+    location: 'Pune'
+})
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a145b2da12129141fa70678')
+  }
+}
+
+db.Employee.find()
+{
+  _id: ObjectId('6a145b2da12129141fa70678'),
+  name: 'Mark',
+  marks: '95',
+  location: 'Pune'
+}
+
+show collections
+Employee
